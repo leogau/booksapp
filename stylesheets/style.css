@@ -1,0 +1,106 @@
+/* Body */
+
+body {
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', Helvetica, Arial, Verdana, sans-serif;
+  line-height: 1.5em;
+}
+
+.container {	
+}
+
+/* Header */
+
+.header {
+  border-bottom: 2px solid #e1e1e1;
+}
+
+.header ul {
+  overflow: hidden;
+}
+
+.header ul li {
+  float: left;
+  list-style: none;
+  margin: 1em;
+}
+
+.header ul li a {
+  color: #000;
+  text-decoration: none;
+}
+
+.header ul li a:hover {
+  background: #000;
+  color: #fff;
+}
+
+.header #on_page {
+  border-bottom: 2px solid #000;
+}
+
+/* Main Column */
+
+.main_column {
+}
+
+.main_column .contents {
+  margin: 3.5em;
+  color: #111;
+}
+
+.main_column .contents a {
+  color: #000;
+}
+
+.main_column .contents a:hover {
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Footer */
+
+.footer {
+  border-top: 2px solid #e1e1e1;
+}
+
+.footer #copyright {
+  float: right;
+}
+
+/* Book */
+
+.book {
+  width: 30%;
+  border-right: 1px solid #e1e1e1;
+  padding: 0 3em;
+}
+
+.inside {
+  width: intrinsic;
+  width: -moz-max-content;
+  border: 0;
+  padding: 2em;
+	position: relative;
+	float: right;
+}
+
+.book a h3 {
+  text-decoration: underline;
+  color: #000;
+}
+
+.book a:hover h3 {
+  background: #000;
+  color: #fff;
+  width: intrinsic;
+  width: -moz-max-content;
+}
+
+.content {
+	position: relative;
+  left: 10em;
+	top: 3.5em;
+	width: 640px;
+	padding-bottom: 5em;
+}

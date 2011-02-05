@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.O Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+  
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="em">
+	<head>
+  
+    <title>Leo Gau</title>
+  
+    <link href="/stylesheets/style.css" type="text/css" rel="stylesheet" />
+  
+    <script type="text/javascript">
+
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-20833593-1']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+
+		</script>
+  
+  </head>
+
+	<body>
+			<div class="container">
+        
+        <div class="header">
+					
+				  <ul>
+						<li><a href="../index.html">Home</a></li>
+						<li><a href="../blog">Blog</a></li>
+						<li><a href="#">Portfolio</a></li>
+            <li><a href="." id="on_page">Books</a></li>
+           </ul>
+
+        </div>
+        {% block content %}
+        <div class="main_column">
+
+          <div class="contents" style="margin-top: 0;">
+ 
+            <h3>Books I've read</h3>
+
+            <p>These are my book notes. They include excerpts as well as my own notes. I'll be updating this page as I finish more books.</p>
+
+          </div>
+
+          <div class="book">
+            <a href="/highschool">
+              <img border="0" src="/images/HighSchoolSuperstar.jpg" />
+              <h3>High School Superstar</h3>
+            </a>
+            <p>RATING: I wish I read this in high school</p>
+            <p>Why read a book about becoming a High School Superstar? On the surface it's about getting into college. It's actually about living an interested life.</p>
+            <p>(<a href="http://www.amazon.com/gp/product/0767932587?ie=UTF8&tag=lega01-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0767932587">Amazon</a>)
+          </div>
+
+
+            <!--div class="book" style="float: left;">
+              <a href="http://www.amazon.com/gp/product/0446578649?ie=UTF8&tag=lega01-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0446578649"><img border="0" src="covers/BrazenCareerist.jpg">
+                <h3>Brazen Careerist</h3>
+              </a>
+              <p>RATING: Eh. Uneven.</p>
+              <p class="words">Summary</p>
+              <p>(<a href="/books/BrazenCareerist.html">My notes</a>)
+            </div>
+
+            <br /-->
+
+
+      </div>
+      {% endblock %}
+      <div class="footer">
+
+				<p id="copyright">Copyright &copy; 2011 Leo Gau - All Rights Reserved</p>
+      
+      </div>
+
+    </div>
+	</body>
+</html>
+	
