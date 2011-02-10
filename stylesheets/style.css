@@ -61,7 +61,7 @@ body {
 /* Footer */
 
 .footer {
-  border-top: 2px solid #e1e1e1;
+/*  border-top: 2px solid #e1e1e1; */
 }
 
 .footer #copyright {
@@ -71,9 +71,13 @@ body {
 /* Book */
 
 .book {
-  width: 30%;
-  border-right: 1px solid #e1e1e1;
+  width: 300px;
   padding: 0 3em;
+  position: relative;
+  left: 200px;
+}
+
+.outside {
 }
 
 .inside {
@@ -81,8 +85,8 @@ body {
   width: -moz-max-content;
   border: 0;
   padding: 2em;
-	position: relative;
-	float: right;
+  position: relative;
+  float: right;
 }
 
 .book a h3 {
@@ -99,8 +103,8 @@ body {
 
 .content {
 	position: relative;
-  left: 10em;
+  left: 5em;
 	top: 3.5em;
-	width: 640px;
+	width: 720px;
 	padding-bottom: 5em;
 }
