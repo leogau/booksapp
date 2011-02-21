@@ -1,10 +1,17 @@
 ROADMAP
 
-**DONE--Implement Book model
 
 Implement Admin module to handle new book input
+DONE    Implement Users
+DONE    Add me@leogau.org as an admin
+DONE   Restrict access to admins only
+DONE    Figure out how to redirect to the input form
+DONE    Make sure URLS are set correctly
+DONE    Create form for input
 
-Implement restricted access
+Display all books in Index
+	Implement a template that loops through all books and displays it correctly
+    Implement parsing for correct formatting
 
 Rewrite to semantic, valid HTML
 
