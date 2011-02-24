@@ -2,6 +2,8 @@
 
 {% block content %}
 
+<a href="{{ url }}">{{ url_linktext }}</a>
+
 <form action="/admin/new" method="post">
     <div>
         <input type="submit" value="Add book" />
@@ -22,7 +24,7 @@
 		<legend>Takeaways</legend>
 		<p>1.) <textarea rows="3" cols="40" name="first" id="first"></textarea></p>
 		<p>2.) <textarea rows="3" cols="40" name="second" id="second"></textarea></p>
-		<p>3.) <textarea rows="3" cols="40" name="thrid" id="third"></textarea></p>
+		<p>3.) <textarea rows="3" cols="40" name="third" id="third"></textarea></p>
 	</fieldset>
 	<fieldset>
 		<legend>Notes</legend>

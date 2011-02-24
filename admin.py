@@ -8,7 +8,7 @@ from google.appengine.ext import webapp
 from google.appengine.ext.webapp import util
 from google.appengine.ext.webapp import template
 
-class Admin(webapp.RequestHandler):
+class AdminHandler(webapp.RequestHandler):
 	def get(self):
 
 		if users.is_current_user_admin():
@@ -17,8 +17,10 @@ class Admin(webapp.RequestHandler):
 		else:
 			self.redirect(users.create_login_url(self.request.uri))
 
-class Book(webapp.RequestHandler):
+
+class BookHandler(webapp.RequestHandler):
 	def post(self):
+		self.response.out.write("in Book")
 		book = Book()
 
 		book.rating = self.request.get('rating')
@@ -46,9 +48,11 @@ def enter_books(self):
 	}	
 	self.response.out.write(template.render(path, template_values))
 
+
 def main():
-	application = webapp.WSGIApplication([('/admin', Admin),
-										  ('/admin/new', Book)],
+	application = webapp.WSGIApplication(
+										  [('/admin', AdminHandler),
+										   ('/admin/new', BookHandler)],
 										  debug=True)
 	util.run_wsgi_app(application)
 
