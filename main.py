@@ -11,7 +11,7 @@ from google.appengine.ext import db
 
 class MainHandler(webapp.RequestHandler):
     def get(self):
-			path = os.path.join(os.path.dirname(__file__), '/templates/index.html')
+			path = os.path.join(os.path.dirname(__file__), 'templates/index.html')
 
 			books = db.GqlQuery("SELECT * FROM Book ORDER BY date")
 

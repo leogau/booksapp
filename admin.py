@@ -41,7 +41,7 @@ class BookHandler(webapp.RequestHandler):
 def enter_books(self):
 	url = users.create_logout_url('/admin')
 	url_linktext = 'Logout'
-	path = os.path.join(os.path.dirname(__file__), '/templates/admin.html')
+	path = os.path.join(os.path.dirname(__file__), 'templates/admin.html')
 	template_values = {
 		'url': url,
 		'url_linktext': url_linktext,

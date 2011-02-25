@@ -10,7 +10,7 @@ DONE    Make sure URLS are set correctly
 DONE    Create form for input
 
 Display all books in Index
-    Create a template folder
+DONE    Create a template folder
 	Implement a template that loops through all books and displays it correctly
     Create a new template for individual books
     Implement parsing for correct formatting

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<a href="{{ url }}">{{ url_linktext }}</a>
+
+<form action="/admin/new" method="post">
+    <div>
+        <input type="submit" value="Add book" />
+    </div>
+    <fieldset>
+        <legend>Title</legend>
+        <textarea rows="1" cols="40" name="title" id="title"></textarea>
+    </fieldset>
+    <fieldset>
+        <legend>Rating</legend>
+        <textarea rows="1" cols="40" name="rating" id="rating"></textarea>
+    </fieldset>
+    <fieldset>
+		<legend>Summary</legend>
+		<textarea rows="3" cols="40" name="summary" id="summary"></textarea>
+	</fieldset>
+	<fieldset>
+		<legend>Takeaways</legend>
+		<p>1.) <textarea rows="3" cols="40" name="first" id="first"></textarea></p>
+		<p>2.) <textarea rows="3" cols="40" name="second" id="second"></textarea></p>
+		<p>3.) <textarea rows="3" cols="40" name="third" id="third"></textarea></p>
+	</fieldset>
+	<fieldset>
+		<legend>Notes</legend>
+		<textarea rows="100" cols="100" name="notes" id="notes"></textarea>
+	</fieldset>
+    <div>
+        <input type="submit" value="Add book" />
+    </div>
+</form>
+
+{% endblock %}
