@@ -13,7 +13,7 @@ class MainHandler(webapp.RequestHandler):
     def get(self):
 			path = os.path.join(os.path.dirname(__file__), 'templates/index.html')
 
-			books = db.GqlQuery("SELECT * FROM Book ORDER BY date")
+			books = db.GqlQuery("SELECT * FROM Book ORDER BY date ASC")
 
 			template_values = {
 				'books': books,

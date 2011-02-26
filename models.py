@@ -12,3 +12,4 @@ class Book(db.Model):
 	second = db.StringProperty(multiline=True)
 	third = db.StringProperty(multiline=True)
 	notes = db.StringProperty(multiline=True)
+    amazon_link = 
