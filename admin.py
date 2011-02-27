@@ -32,6 +32,7 @@ class BookHandler(webapp.RequestHandler):
 		book.third = self.request.get('third')
 
 		book.notes = self.request.get('notes')
+		book.amazon_link = self.request.get('amazon_link')
 
 		book.put()
 

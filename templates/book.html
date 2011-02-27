@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="content">
+	<div class="inside book">
+		<a href="{{ book.amazon_link }}">
+			<img />
+			<h3>{{ book.title }}</h3>
+		</a>
+		<p>{{ book.rating }}</p>
+	</div>
+
+	<h3>Summary</h3>
+	<p>{{ book.summary }}</p>
+
+	<h3>3 Takeaways</h3>
+	<ol>
+		<li>{{ book.first }}</li>
+		<li>{{ book.second }}</li>
+		<li>{{ book.third }}</li>
+	</ol>
+
+	<h3>Notes</h3>
+	{{ book.notes }}
+
+</div>
+
+{% endblock %}
