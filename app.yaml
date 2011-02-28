@@ -8,7 +8,7 @@ handlers:
   static_dir: stylesheets
 
 - url: /images
-  static_dir: images
+  script: admin.py
 
 - url: /admin
   script: admin.py

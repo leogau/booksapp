@@ -14,9 +14,10 @@ DONE    Create a template folder
 DONE    Implement amazon_link
 DONE	Implement a template that loops through all books and displays it correctly
 DONE    Create a new template for individual books
-    Make book.notes escape html tags. cgi.escape
+DONE    Make book.notes escape html tags. cgi.escape
     Implement image uploads
     Figure out book url structure and what's going to happen when I click a book title
+        I can grab url text, so maybe book=/url and generate that.
     Implement parsing for correct formatting
 
 Rewrite to semantic, valid HTML

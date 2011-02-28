@@ -5,6 +5,8 @@ class Book(db.Model):
 	date = db.DateProperty(auto_now_add=True)
 	rating = db.StringProperty()
 	title = db.StringProperty()
+	amazon_link = db.StringProperty()
+	cover = db.BlobProperty()
 	
 	# Content
 	summary = db.StringProperty(multiline=True)
@@ -12,6 +14,5 @@ class Book(db.Model):
 	second = db.StringProperty(multiline=True)
 	third = db.StringProperty(multiline=True)
 	notes = db.StringProperty(multiline=True)
-	amazon_link = db.StringProperty()
 
 

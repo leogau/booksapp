@@ -4,10 +4,11 @@
 
 <a href="{{ url }}">{{ url_linktext }}</a>
 
-<form action="/admin/new" method="post">
+<form action="/admin/new" enctype="multipart/form-data" method="post">
     <div>
         <input type="submit" value="Add book" />
     </div>
+	<p><label for="img">Cover Image:</label><input type="file" name="img" /></p>
 	<p><label for="amazon">Amazon link:</label> <input name="amazon" id="amazon" /></p>
     <fieldset>
         <legend>Title</legend>
