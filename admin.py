@@ -2,7 +2,7 @@
 
 import os
 import cgi
-from models import Book 
+from models import Book
 from google.appengine.api import users
 from google.appengine.ext import db
 from google.appengine.ext import webapp
@@ -35,15 +35,15 @@ class BookHandler(webapp.RequestHandler):
 
         book.notes = cgi.escape(self.request.get('notes'))
         book.amazon_link = self.request.get('amazon_link')
-        cover = self.request.get('img')
-        book.cover = db.Blob(cover)
+#        cover = self.request.get('img')
+        book.cover = self.request.get('img')
 
         book.put()
 
         self.redirect('/')
 
 
-class Image(webapp.RequestHandler):
+class ImageHandler(webapp.RequestHandler):
     def get(self):
         book = db.get(self.request.get("img_id"))
         if book.cover:
@@ -68,7 +68,7 @@ def main():
     application = webapp.WSGIApplication(
                                           [('/admin', AdminHandler),
                                            ('/admin/new', BookHandler),
-										   ('/images', Image)],
+										   ('/images', ImageHandler)],
                                           debug=True)
     util.run_wsgi_app(application)
 

@@ -15,9 +15,7 @@
 	{% for book in books %}
 
 	<div class="book">
-        {% if book.cover %}
-            <!--img border="0" src="images?cover_id={{ book.key() }}" /-->
-        {% endif %}
+        <p><img src="images?img_id={{ book.key }}" /></p>
 		<h3>{{ book.title }}</h3>
 		<p>RATING: {{ book.rating }}</p>
 		<p>Summary: {{ book.summary }}</p>
