@@ -5,7 +5,7 @@ class Book(db.Model):
 	date = db.DateProperty(auto_now_add=True)
 	rating = db.StringProperty()
 	title = db.StringProperty()
-	amazon_link = db.StringProperty()
+	amazon_link = db.LinkProperty()
 	cover = db.BlobProperty()
 	
 	# Content

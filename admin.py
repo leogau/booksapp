@@ -34,7 +34,9 @@ class BookHandler(webapp.RequestHandler):
         book.third = self.request.get('third')
 
         book.notes = cgi.escape(self.request.get('notes'))
-        book.amazon_link = self.request.get('amazon_link')
+        
+        book.amazon_link = db.Link(self.request.get('amazon'))
+
 #        cover = self.request.get('img')
         book.cover = self.request.get('img')
 
@@ -68,7 +70,7 @@ def main():
     application = webapp.WSGIApplication(
                                           [('/admin', AdminHandler),
                                            ('/admin/new', BookHandler),
-										   ('/images', ImageHandler)],
+                                           ('/images', ImageHandler)],
                                           debug=True)
     util.run_wsgi_app(application)
 

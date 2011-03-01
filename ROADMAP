@@ -15,7 +15,9 @@ DONE    Implement amazon_link
 DONE	Implement a template that loops through all books and displays it correctly
 DONE    Create a new template for individual books
 DONE    Make book.notes escape html tags. cgi.escape
-    Implement image uploads
+DONE    Implement image uploads
+DONE    Get the Amazon link working
+    Make clicking the cover/title go to book page
     Figure out book url structure and what's going to happen when I click a book title
         I can grab url text, so maybe book=/url and generate that.
     Implement parsing for correct formatting
