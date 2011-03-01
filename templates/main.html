@@ -15,8 +15,10 @@
 	{% for book in books %}
 
 	<div class="book">
-        <p><img src="images?img_id={{ book.key }}" /></p>
-		<h3>{{ book.title }}</h3>
+        <a href="{{ book.title }}">
+            <p><img src="images?img_id={{ book.key }}" /></p>
+            <h3>{{ book.title }}</h3>
+        </a>
 		<p>RATING: {{ book.rating }}</p>
 		<p>Summary: {{ book.summary }}</p>
 		<p>(<a href="{{ book.amazon_link }}">Amazon</a>)</p>
