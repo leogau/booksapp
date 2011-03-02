@@ -17,5 +17,8 @@ handlers:
   script: admin.py
   login: admin
 
-- url: /.*
+- url: /
   script: main.py
+
+- url: /.*
+  script: book.py
