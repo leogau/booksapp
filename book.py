@@ -11,9 +11,9 @@ class BookHandler(webapp.RequestHandler):
     def get(self):
         path = os.path.join(os.path.dirname(__file__), 'templates/book.html')
 
-        book_title = (self.request.path).replace('/', '')
+        book_url = (self.request.path).replace('/', '')
 #        self.response.out.write(book_title)
-        book = db.GqlQuery("SELECT * FROM Book WHERE title = :1", book_title).get()
+        book = db.GqlQuery("SELECT * FROM Book WHERE url = :1", book_url).get()
 #        book = Book.gql("WHERE title = 'Steve'").get()
 
         template_values = {

@@ -18,11 +18,12 @@ DONE    Make book.notes escape html tags. cgi.escape
 DONE    Implement image uploads
 DONE    Get the Amazon link working
 DONE    Make clicking the cover/title go to book page
-    Figure out book url structure and what's going to happen when I click a book title
-        I can grab url text, so maybe book=/url and generate that.
-        URL will be .org/book.title
-        Grab the title and GQL that
-    Implement parsing for correct formatting
+DONE    Figure out book url structure and what's going to happen when I click a book title
+            I can grab url text, so maybe book=/url and generate that.
+            URL will be .org/book.title
+            Grab the title and GQL that
+DONE    Correct the book template
+DONE    Implement parsing for correct formatting
 
 Rewrite to semantic, valid HTML
 
