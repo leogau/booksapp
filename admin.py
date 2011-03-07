@@ -31,7 +31,6 @@ class AdminHandler(webapp.RequestHandler):
 
 class BookHandler(webapp.RequestHandler):
     def post(self):
-        self.response.out.write("in Book")
         book = Book()
 
         book.rating = self.request.get('rating')

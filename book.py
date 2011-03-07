@@ -37,7 +37,23 @@ class BookEditor(webapp.RequestHandler):
         self.response.out.write(template.render(path, template_values))
 
     def post(self):
-        pass
+        book = Book()
+ 
+		book.rating = self.request.get('rating')
+        book.title = self.request.get('title')
+
+        book.summary = self.request.get('summary')
+        book.first = self.request.get('first')
+        book.second = self.request.get('second')
+        book.third = self.request.get('third')
+
+        book.notes = self.request.get('notes')
+        
+        book.amazon_link = db.Link(self.request.get('amazon'))
+        book.url = self.request.get('title').replace(' ', '')
+
+
+		
 
 
 def get_book(self):
