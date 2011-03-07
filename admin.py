@@ -2,6 +2,7 @@
 
 import os
 import cgi
+import string
 from models import Book
 from google.appengine.api import users
 from google.appengine.ext import db
@@ -45,7 +46,8 @@ class BookHandler(webapp.RequestHandler):
         book.notes = self.request.get('notes')
         
         book.amazon_link = db.Link(self.request.get('amazon'))
-        book.url = self.request.get('title').replace(' ', '')
+        book.url = self.request.get('title').replace(' ', '').lower()
+       # book.url = string.translate(url,string.maketrans('',''), string.punctuation)
 
 #        cover = self.request.get('img')
         book.cover = self.request.get('img')

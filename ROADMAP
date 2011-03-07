@@ -27,7 +27,7 @@ DONE    Implement parsing for correct formatting
     Put in Edit and Delete functionailty
         Fill in variables in the input tags in the edit form
             What to do with the picture? just leave it for now
-            How do I pass which book I'm editing?
+DONE            How do I pass which book I'm editing?
         Add an edit link to book.html
 
 Rewrite to semantic, valid HTML

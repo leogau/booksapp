@@ -4,35 +4,36 @@
 
 <form action="/admin/edit" enctype="multipart/form-data" method="post">
     <div>
-        <input type="submit" value="Add book" />
+        <input type="submit" value="Update book" />
     </div>
     <p>Current Cover: <img src="images?img_id={{ book.key }}" /></p>
 	<p>Cover Image:<input type="file" name="img" id="img" /></p>
-	<p><label for="amazon">Amazon link:</label> <input name="amazon" id="amazon" /></p>
+	<p><label for="amazon">Amazon link:</label> <input name="amazon"
+    id="amazon" value="{{ book.amazon }}" /></p>
     <fieldset>
         <legend>Title</legend>
-        <textarea rows="1" cols="40" name="title" id="title"></textarea>
+        <textarea rows="1" cols="40" name="title" id="title">{{ book.title }}</textarea>
     </fieldset>
     <fieldset>
         <legend>Rating</legend>
-        <textarea rows="1" cols="40" name="rating" id="rating"></textarea>
+        <textarea rows="1" cols="40" name="rating" id="rating">{{ book.rating }}</textarea>
     </fieldset>
     <fieldset>
 		<legend>Summary</legend>
-		<textarea rows="3" cols="40" name="summary" id="summary"></textarea>
+        <textarea rows="3" cols="40" name="summary" id="summary">{{ book.summary }}</textarea>
 	</fieldset>
 	<fieldset>
 		<legend>Takeaways</legend>
-		<p>1.) <textarea rows="3" cols="40" name="first" id="first"></textarea></p>
-		<p>2.) <textarea rows="3" cols="40" name="second" id="second"></textarea></p>
-		<p>3.) <textarea rows="3" cols="40" name="third" id="third"></textarea></p>
+        <p>1.) <textarea rows="3" cols="40" name="first" id="first">{{ book.first }}</textarea></p>
+        <p>2.) <textarea rows="3" cols="40" name="second" id="second">{{ book.second }}</textarea></p>
+        <p>3.) <textarea rows="3" cols="40" name="third" id="third">{{ book.third }}</textarea></p>
 	</fieldset>
 	<fieldset>
 		<legend>Notes</legend>
-		<textarea rows="100" cols="100" name="notes" id="notes"></textarea>
+        <textarea rows="100" cols="100" name="notes" id="notes">{{ book.notes }}</textarea>
 	</fieldset>
     <div>
-        <input type="submit" value="Add book" />
+        <input type="submit" value="Update book" />
     </div>
 </form>
 
