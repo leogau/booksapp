@@ -2,14 +2,14 @@
 
 {% block content %}
 
-<form action="/admin/edit" enctype="multipart/form-data" method="post">
+<form action="/edit/{{ book.url }}" enctype="multipart/form-data" method="post">
     <div>
         <input type="submit" value="Update book" />
     </div>
     <p>Current Cover: <img src="images?img_id={{ book.key }}" /></p>
 	<p>Cover Image:<input type="file" name="img" id="img" /></p>
 	<p><label for="amazon">Amazon link:</label> <input name="amazon"
-    id="amazon" value="{{ book.amazon }}" /></p>
+    id="amazon" value="{{ book.amazon_link }}" /></p>
     <fieldset>
         <legend>Title</legend>
         <textarea rows="1" cols="40" name="title" id="title">{{ book.title }}</textarea>

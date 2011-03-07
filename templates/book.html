@@ -5,25 +5,26 @@
 <div class="content">
 	<div class="inside book">
 		<a href="{{ book.amazon_link }}">
-            <img src="images?img_id={{ book.key }}" />
-			<h3>{{ book.title }}</h3>
+            <img border="0" src="images?img_id={{ book.key }}" />
+			<h2>{{ book.title }}</h2>
 		</a>
 		<p>{{ book.rating }}</p>
-        <p><a href="/edit/{{ book.url }}">Edit {{ book.title }}'s
-            information</a></p>
+        {% if admin %}
+            <p><a href="/edit/{{ book.url }}">Edit {{ book.title }}'s information</a></p>
+        {% endif %}
 	</div>
 
-	<h3>Summary</h3>
+	<h1>Summary</h1>
 	<p>{{ book.summary }}</p>
 
-	<h3>3 Takeaways</h3>
+	<h1>3 Takeaways</h1>
 	<ol>
 		<li>{{ book.first }}</li>
 		<li>{{ book.second }}</li>
 		<li>{{ book.third }}</li>
 	</ol>
 
-	<h3>Notes</h3>
+	<h1>Notes</h1>
 	{{ book.notes }}
 
 </div>

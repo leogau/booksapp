@@ -5,6 +5,7 @@
 <form action="/admin/new" enctype="multipart/form-data" method="post">
     <div>
         <input type="submit" value="Add book" />
+        <a href="{{ url }}">{{ url_linktext }}</a>
     </div>
 	<p>Cover Image:<input type="file" name="img" id="img" /></p>
 	<p><label for="amazon">Amazon link:</label> <input name="amazon" id="amazon" /></p>

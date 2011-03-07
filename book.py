@@ -3,6 +3,7 @@
 import os
 from models import Book
 from google.appengine.ext import webapp
+from google.appengine.api import users
 from google.appengine.ext.webapp import util
 from google.appengine.ext.webapp import template
 from google.appengine.ext import db
@@ -16,9 +17,15 @@ class BookHandler(webapp.RequestHandler):
         book = db.GqlQuery("SELECT * FROM Book WHERE url = :1", book_url).get()
 #book = Book.gql("WHERE title = 'Steve'").get()
 #book = get_book(self)
-    
+
+        if users.is_current_user_admin():
+            admin = True
+        else:
+            admin = False
+
         template_values = {
             'book': book,
+            'admin': admin,
         }
 
         self.response.out.write(template.render(path, template_values))
@@ -41,8 +48,8 @@ class BookEditor(webapp.RequestHandler):
 
     def post(self):
         book = Book()
- 
-		book.rating = self.request.get('rating')
+        
+        book.rating = self.request.get('rating')
         book.title = self.request.get('title')
 
         book.summary = self.request.get('summary')
@@ -55,8 +62,7 @@ class BookEditor(webapp.RequestHandler):
         book.amazon_link = db.Link(self.request.get('amazon'))
         book.url = self.request.get('title').replace(' ', '')
 
-
-		
+        self.redirect("/%s" % book.url)
 
 
 def get_book(self):

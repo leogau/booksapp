@@ -71,7 +71,7 @@ body {
 /* Book */
 
 .book {
-  width: 300px;
+/*  width: 300px; */
   padding: 0 3em;
   position: relative;
   left: 200px;
@@ -89,12 +89,12 @@ body {
   float: right;
 }
 
-.book a h3 {
+.book a h2 {
   text-decoration: underline;
   color: #000;
 }
 
-.book a:hover h3 {
+.book a:hover h2 {
   background: #000;
   color: #fff;
   width: intrinsic;
