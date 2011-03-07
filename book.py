@@ -3,6 +3,7 @@
 import os
 from models import Book
 from google.appengine.ext import webapp
+from google.appengine.api import users
 from google.appengine.ext.webapp import util
 from google.appengine.ext.webapp import template
 from google.appengine.ext import db
@@ -16,10 +17,16 @@ class BookHandler(webapp.RequestHandler):
 		book = db.GqlQuery("SELECT * FROM Book WHERE url = :1", book_url).get()
 #book = Book.gql("WHERE title = 'Steve'").get()
 #book = get_book(self)
-	
-		template_values = {
-			'book': book,
-		}
+
+        if users.is_current_user_admin():
+            admin = True
+        else:
+            admin = False
+
+        template_values = {
+            'book': book,
+            'admin': admin,
+        }
 
 		self.response.out.write(template.render(path, template_values))
 
@@ -39,11 +46,11 @@ class BookEditor(webapp.RequestHandler):
 
 		self.response.out.write(template.render(path, template_values))
 
-	def post(self):
-		book = get_book(self)
-		
-		book.rating = self.request.get('rating') if self.request.get('rating') != book.rating else book.rating
-		book.title = self.request.get('title') if self.request.get('title') != book.title else book.title
+    def post(self):
+        book = Book()
+        
+        book.rating = self.request.get('rating')
+        book.title = self.request.get('title')
 
 		book.summary = self.request.get('summary') if self.request.get('summary') != book.summary else book.summary
 		book.first = self.request.get('first') if self.request.get('first') != book.first else book.first

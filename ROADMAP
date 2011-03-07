@@ -19,27 +19,21 @@ DONE    Implement image uploads
 DONE    Get the Amazon link working
 DONE    Make clicking the cover/title go to book page
 DONE    Figure out book url structure and what's going to happen when I click a book title
-            I can grab url text, so maybe book=/url and generate that.
-            URL will be .org/book.title
-            Grab the title and GQL that
+DONE            I can grab url text, so maybe book=/url and generate that.
+DONE            URL will be .org/book.title
+DONE            Grab the title and GQL that
 DONE    Correct the book template
 DONE    Implement parsing for correct formatting
-    Put in Edit and Delete functionailty
-		No Delete
-DONE        Fill in variables in the input tags in the edit form
-            What to do with the picture? just leave it for now
-DONE            How do I pass which book I'm editing?
-DONE        Add an edit link to book.html
 
-Rewrite to semantic, valid HTML
+DONE Rewrite to semantic, valid HTML
 
 Restyle Index page
 
 Put in Edit and Delete functionailty
-	Fill in variables in the input tags in the edit form
+DONE	Fill in variables in the input tags in the edit form
 		What to do with the picture? just leave it for now
-		How do I pass which book I'm editing?
-	Add an edit link to book.html
+DONE		How do I pass which book I'm editing?
+DONE	Add an edit link to book.html
 
 Implement sorting
 
