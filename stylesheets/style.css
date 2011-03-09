@@ -70,6 +70,22 @@ body {
 
 /* Book */
 
+.content {
+	position: relative;
+    left: 5em;
+	top: 3.5em;
+	width: 960px;
+	padding-bottom: 5em;
+}
+
+.text {
+    position: absolute;
+    top: 0;
+    right: 40%;
+    bottom: 0;
+    left: 0;
+}
+
 .book {
 /*  width: 300px; */
   padding: 0 3em;
@@ -80,30 +96,27 @@ body {
 }
 
 .inside {
-  width: intrinsic;
-  width: -moz-max-content;
+/*  width: intrinsic;
+  width: -moz-max-content; */
   border: 0;
-  padding: 2em;
-  position: relative;
-  float: right;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  left: 75%;
 }
 
 .book a h2 {
   text-decoration: underline;
   color: #000;
+/*  font-size: 18px;*/
 }
 
 .book a:hover h2 {
   background: #000;
   color: #fff;
-  width: intrinsic;
+/*  width: intrinsic;
   width: -moz-max-content;
-}
-
-.content {
-	position: relative;
-    left: 5em;
-	top: 3.5em;
-    width: 960px;
-	padding-bottom: 5em;
+  font-size: 12px;*/
 }

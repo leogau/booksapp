@@ -14,19 +14,20 @@
         {% endif %}
 	</div>
 
-	<h1>Summary</h1>
-	<p>{{ book.summary }}</p>
+    <div class="text">
+        <h1>Summary</h1>
+        <p>{{ book.summary }}</p>
 
-	<h1>3 Takeaways</h1>
-	<ol>
-		<li>{{ book.first }}</li>
-		<li>{{ book.second }}</li>
-		<li>{{ book.third }}</li>
-	</ol>
+        <h1>3 Takeaways</h1>
+        <ol>
+            <li>{{ book.first }}</li>
+            <li>{{ book.second }}</li>
+            <li>{{ book.third }}</li>
+        </ol>
 
-	<h1>Notes</h1>
-	{{ book.notes }}
-
+        <h1>Notes</h1>
+        {{ book.notes }}
+    </div>
 </div>
 
 {% endblock %}
