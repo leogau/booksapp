@@ -18,17 +18,17 @@ class BookHandler(webapp.RequestHandler):
 #book = Book.gql("WHERE title = 'Steve'").get()
 #book = get_book(self)
 
-		if users.is_current_user_admin():
-			admin = True
-		else:
-			admin = False
+        if users.is_current_user_admin():
+            admin = True
+        else:
+            admin = False
 
-		template_values = {
-			'book': book,
-			'admin': admin,
-		}
-		
-		self.response.out.write(template.render(path, template_values))
+        template_values = {
+            'book': book,
+            'admin': admin,
+        }
+
+        self.response.out.write(template.render(path, template_values))
 
 
 class BookEditor(webapp.RequestHandler):
@@ -46,11 +46,11 @@ class BookEditor(webapp.RequestHandler):
 
         self.response.out.write(template.render(path, template_values))
 
-	def post(self):
-		book = Book()
-		
-		book.rating = self.request.get('rating')
-		book.title = self.request.get('title')
+    def post(self):
+        book = Book()
+        
+        book.rating = self.request.get('rating')
+        book.title = self.request.get('title')
 
         book.summary = self.request.get('summary') if self.request.get('summary') != book.summary else book.summary
         book.first = self.request.get('first') if self.request.get('first') != book.first else book.first

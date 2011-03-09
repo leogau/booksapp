@@ -66,10 +66,11 @@ class ImageHandler(webapp.RequestHandler):
 
         if book.cover:
             img = images.Image(book.cover)
-            img.resize(width=100, height=150)
+            img.resize(width=350, height=550)
+	    img.im_feeling_lucky()
             cover = img.execute_transforms(output_encoding=images.JPEG)
 
-            self.response.headers['Content-Type'] = "image/jpg"
+            self.response.headers['Content-Type'] = "image/jpeg"
             self.response.out.write(cover)
         else:
             self.response.out.write("No image")
