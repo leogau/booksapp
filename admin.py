@@ -3,11 +3,15 @@
 import os
 import cgi
 import string
+
 from models import Book
+
 from google.appengine.api import users
+from google.appengine.api import images
+
 from google.appengine.ext import db
 from google.appengine.ext import webapp
-from google.appengine.api import images
+
 from google.appengine.ext.webapp import util
 from google.appengine.ext.webapp import template
 
@@ -59,9 +63,14 @@ class BookHandler(webapp.RequestHandler):
 class ImageHandler(webapp.RequestHandler):
     def get(self):
         book = db.get(self.request.get("img_id"))
+
         if book.cover:
+            img = images.Image(book.cover)
+            img.resize(width=100, height=150)
+            cover = img.execute_transforms(output_encoding=images.JPEG)
+
             self.response.headers['Content-Type'] = "image/jpg"
-            self.response.out.write(book.cover)
+            self.response.out.write(cover)
         else:
             self.response.out.write("No image")
 
