@@ -8,7 +8,7 @@
             <img border="0" src="images?img_id={{ book.key }}" />
 			<h2>{{ book.title }}</h2>
 		</a>
-		<p>{{ book.rating }}</p>
+        <p><h3>Rating</h3> {{ book.rating }}</p>
         {% if admin %}
             <p><a href="/edit/{{ book.url }}">Edit {{ book.title }}'s information</a></p>
         {% endif %}

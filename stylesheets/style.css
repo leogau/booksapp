@@ -61,7 +61,7 @@ body {
 /* Footer */
 
 .footer {
-/*  border-top: 2px solid #e1e1e1; */
+  border-top: 2px solid #e1e1e1;
 }
 
 .footer #copyright {
@@ -74,7 +74,6 @@ body {
 /*  width: 300px; */
   padding: 0 3em;
   position: relative;
-  left: 200px;
 }
 
 .outside {
@@ -103,8 +102,8 @@ body {
 
 .content {
 	position: relative;
-  left: 5em;
+    left: 5em;
 	top: 3.5em;
-	width: 720px;
+    width: 960px;
 	padding-bottom: 5em;
 }
