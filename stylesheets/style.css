@@ -73,11 +73,11 @@ body {
 /* Book */
 
 .content {
-	position: relative;
-    left: 5em;
-	top: 3.5em;
-	width: 960px;
-	padding-bottom: 5em;
+  position: relative;
+  left: 5em;
+  top: 3.5em;
+  width: 960px;
+  padding-bottom: 5em;
 }
 
 .text {

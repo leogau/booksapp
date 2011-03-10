@@ -5,7 +5,7 @@ V2
 Implement Admin module to handle new book input
 DONE    Implement Users
 DONE    Add me@leogau.org as an admin
-DONE   Restrict access to admins only
+DONE    Restrict access to admins only
 DONE    Figure out how to redirect to the input form
 DONE    Make sure URLS are set correctly
 DONE    Create form for input
@@ -30,9 +30,9 @@ DONE Rewrite to semantic, valid HTML
 
 DONE Restyle Index page
 
-Put in Edit functionailty
+DONE Put in Edit functionailty
 DONE	Fill in variables in the input tags in the edit form
-		What to do with the picture? just leave it for now
+DONE		What to do with the picture? just leave it for now
 DONE		How do I pass which book I'm editing?
 DONE	Add an edit link to book.html
 

@@ -11,23 +11,15 @@ from google.appengine.ext import db
 
 class MainHandler(webapp.RequestHandler):
     def get(self):
-			path = os.path.join(os.path.dirname(__file__), 'templates/main.html')
+	path = os.path.join(os.path.dirname(__file__), 'templates/main.html')
 
-			books = db.GqlQuery("SELECT * FROM Book ORDER BY date DESC")
+	books = db.GqlQuery("SELECT * FROM Book ORDER BY date DESC")
 
-			template_values = {
-				'books': books,
-			}
+	template_values = {
+		'books': books,
+	}
 
-			self.response.out.write(template.render(path, template_values))
-
-
-#class BookHandler(webapp.RequestHandler):
-#	def get(self):
-#		file_name = self.request.path.replace('/', '') + '.html'
-#		path = os.path.join(os.path.dirname(__file__), file_name)
-#		template_values = {}
-#		self.response.out.write(template.render(path, template_values))
+	self.response.out.write(template.render(path, template_values))
 
 
 def main():
@@ -35,7 +27,6 @@ def main():
                                          debug=True)
     util.run_wsgi_app(application)
 
-                                      #    ('/.*', BookHandler)],
 
 if __name__ == '__main__':
     main()
