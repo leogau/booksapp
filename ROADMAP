@@ -1,5 +1,6 @@
 ROADMAP
 
+V2
 
 Implement Admin module to handle new book input
 DONE    Implement Users
@@ -27,15 +28,21 @@ DONE    Implement parsing for correct formatting
 
 DONE Rewrite to semantic, valid HTML
 
-Restyle Index page
+DONE Restyle Index page
 
-Put in Edit and Delete functionailty
+Put in Edit functionailty
 DONE	Fill in variables in the input tags in the edit form
 		What to do with the picture? just leave it for now
 DONE		How do I pass which book I'm editing?
 DONE	Add an edit link to book.html
 
-Implement sorting
+Clean up code and release!
+
+----------------------------------------------------
+
+Implement Delete
+
+Implement Sorting
 
 
 

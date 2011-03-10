@@ -61,11 +61,13 @@ body {
 /* Footer */
 
 .footer {
-  border-top: 2px solid #e1e1e1;
+ /* border-top: 2px solid #e1e1e1;*/
 }
 
 .footer #copyright {
-  float: right;
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
 
 /* Book */
@@ -92,9 +94,9 @@ body {
 }
 
 .book {
-/*  width: 300px; */
-  padding: 0 3em;
-  position: relative;
+/*  width: 300px; 
+  padding: 0 3em; 
+  position: relative; */
 }
 
 .outside {
@@ -124,4 +126,26 @@ body {
 /*  width: intrinsic;
   width: -moz-max-content;
   font-size: 12px;*/
+}
+
+/* Main page */
+
+ul.listings {
+/*  float: left;
+  clear: left; */
+  margin: 0;
+  padding: 0;
+  list-style: none; 
+}
+
+.listing {
+/*  position: relative; */
+  float: left; 
+/*  display: inline; */
+}
+
+.amazon {
+  text-align: center;
+  margin-bottom: 3em;
+  margin-top: 0;
 }
