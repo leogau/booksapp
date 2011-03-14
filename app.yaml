@@ -26,5 +26,8 @@ handlers:
 - url: /
   script: main.py
 
+- url: /edit/.*
+  script: book.py
+
 - url: /.*
   script: book.py

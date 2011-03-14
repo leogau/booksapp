@@ -40,10 +40,10 @@ class BookEditor(webapp.RequestHandler):
         self.response.out.write(template.render(path, template_values))
 
     def post(self):
-        book = Book()
-        
-        book.rating = self.request.get('rating')
-        book.title = self.request.get('title')
+        book = get_book(self)
+       
+        book.rating = self.request.get('rating') if self.request.get('rating') != book.rating else book.rating
+        book.title = self.request.get('title') if self.request.get('title') != book.title else book.title
 
         book.summary = self.request.get('summary') if self.request.get('summary') != book.summary else book.summary
         book.first = self.request.get('first') if self.request.get('first') != book.first else book.first
@@ -55,7 +55,7 @@ class BookEditor(webapp.RequestHandler):
         if book.amazon_link != db.Link(self.request.get('amazon')):
             book.amazon_link = db.Link(self.request.get('amazon'))
 
-        book.url = (self.request.path).lstrip('/edit')
+        book.url = self.request.get('title').replace(' ', '').lower()
 
         book.put()
 
