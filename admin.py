@@ -50,9 +50,7 @@ class BookHandler(webapp.RequestHandler):
         
         book.amazon_link = db.Link(self.request.get('amazon'))
         book.url = self.request.get('title').replace(' ', '').lower()
-       # book.url = string.translate(url,string.maketrans('',''), string.punctuation)
 
-#        cover = self.request.get('img')
         book.cover = self.request.get('img')
 
         book.put()

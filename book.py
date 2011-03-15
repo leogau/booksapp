@@ -9,72 +9,73 @@ from google.appengine.ext.webapp import template
 from google.appengine.ext import db
 
 class BookHandler(webapp.RequestHandler):
-    def get(self):
-        path = os.path.join(os.path.dirname(__file__), 'templates/book.html')
+	def get(self):
+		path = os.path.join(os.path.dirname(__file__), 'templates/book.html')
 
-	book = get_book(self)
+		book = get_book(self)
 
-        if users.is_current_user_admin():
-            admin = True
-        else:
-            admin = False
+		if users.is_current_user_admin():
+			admin = True
+		else:
+			admin = False
 
-        template_values = {
-            'book': book,
-            'admin': admin,
-        }
+		template_values = {
+			'book': book,
+			'admin': admin,
+		}
 
-        self.response.out.write(template.render(path, template_values))
+		self.response.out.write(template.render(path, template_values))
 
 
 class BookEditor(webapp.RequestHandler):
-    def get(self):
-        path = os.path.join(os.path.dirname(__file__), 'templates/edit.html')
+	def get(self):
+		path = os.path.join(os.path.dirname(__file__), 'templates/edit.html')
 
-	book = get_book(self)
+		book = get_book(self)
 
-        template_values = {
-            'book': book,
-        }
+		template_values = {
+			'book': book,
+		}
 
-        self.response.out.write(template.render(path, template_values))
+		self.response.out.write(template.render(path, template_values))
 
-    def post(self):
-        book = get_book(self)
-       
-        book.rating = self.request.get('rating') if self.request.get('rating') != book.rating else book.rating
-        book.title = self.request.get('title') if self.request.get('title') != book.title else book.title
+	def post(self):
+		book = get_book(self)
 
-        book.summary = self.request.get('summary') if self.request.get('summary') != book.summary else book.summary
-        book.first = self.request.get('first') if self.request.get('first') != book.first else book.first
-        book.second = self.request.get('second') if self.request.get('second') != book.second else book.second
-        book.third = self.request.get('third') if self.request.get('third') != book.third else book.third
+		book.key = book.key
+		book.cover = book.cover
+		book.rating = self.request.get('rating').strip()
+		book.title = self.request.get('title').strip()
 
-        book.notes = self.request.get('notes') if self.request.get('notes') != book.notes else book.notes
+		book.summary = self.request.get('summary').strip()
+		book.first = self.request.get('first').strip()
+		book.second = self.request.get('second').strip()
+		book.third = self.request.get('third').strip()
 
-        if book.amazon_link != db.Link(self.request.get('amazon')):
-            book.amazon_link = db.Link(self.request.get('amazon'))
+		book.notes = self.request.get('notes')
 
-        book.url = self.request.get('title').replace(' ', '').lower()
+		book.amazon_link = db.Link(self.request.get('amazon')).strip()
 
-        book.put()
+		book.url = self.request.get('title').replace(' ', '').lower()
 
-        self.redirect('/%s' % book.url)
+		book.put()
+
+		self.redirect('/%s' % book.url)
 
 
 def get_book(self):
-    book_url = (self.request.path).lstrip('/edit')
-    book = db.GqlQuery("SELECT * FROM Book WHERE url = :1", book_url).get()
+	book_url = (self.request.path).lstrip('/edit')
+	book = db.GqlQuery("SELECT * FROM Book WHERE url = :1", book_url).get()
 
-    return book
+	return book
 
 
 def main():
-    application = webapp.WSGIApplication([('/edit/.*', BookEditor),
-                                          ('/.*', BookHandler)],
-                                          debug=True)
-    util.run_wsgi_app(application)
+	application = webapp.WSGIApplication([('/edit/.*', BookEditor),
+										  ('/.*', BookHandler)],
+										  debug=True)
+	util.run_wsgi_app(application)
 
 if __name__ == '__main__':
-    main()
+	main()
 
