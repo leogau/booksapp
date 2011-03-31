@@ -64,8 +64,8 @@ class BookEditor(webapp.RequestHandler):
 
 
 def get_book(self):
-	book_url = (self.request.path).lstrip('/edit')
-	book = db.GqlQuery("SELECT * FROM Book WHERE url = :1", book_url).get()
+	book_url = (self.request.path).rpartition('/')
+	book = db.GqlQuery("SELECT * FROM Book WHERE url = :1", book_url[2]).get()
 
 	return book
 
